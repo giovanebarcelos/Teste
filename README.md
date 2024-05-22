@@ -56,3 +56,7 @@ mindmap
       Pen and paper
       Mermaid
 ```
+
+```
+Bloco qualquer
+```
