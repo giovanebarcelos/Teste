@@ -28,6 +28,38 @@ fdsa
 </details>
 
 Here is a simple flow chart:
+```plantuml
+@startuml
+actor Cliente 
+
+usecase "Visualizar espetáculos" as VisualizarEspetaculos
+usecase "Selecionar assentos" as SelecionarAssentos
+usecase "Adicionar compras ao carrinho de compras" as AdicionarCompras
+usecase "Finalizar a reserva" as FinalizarReserva
+usecase "Efetuar pagamento" as EfetuarPagamento
+usecase "Cadastrar-se" as CadastrarSe
+usecase "Logar" as Logar
+usecase "Confirmar pagamento" as ConfirmarPagamento
+usecase "GerarBilhete" as GerarBilhete
+
+Cliente --> VisualizarEspetaculos
+Cliente --> SelecionarAssentos
+Cliente --> AdicionarCompras
+Cliente --> FinalizarReserva
+Cliente --> EfetuarPagamento
+Cliente --> CadastrarSe
+Cliente --> Logar
+Cliente --> ConfirmarPagamento
+Cliente --> GerarBilhete
+
+FinalizarReserva ..> AdicionarCompras : <<include>> 
+FinalizarReserva ..> CadastrarSe : <<include>> 
+FinalizarReserva ..> Logar : <<include>> 
+EfetuarPagamento ..> FinalizarReserva : <<include>>
+GerarBilhete ..> EfetuarPagamento : <<include>>
+
+@enduml
+```
 
 ```mermaid
 graph TD;
